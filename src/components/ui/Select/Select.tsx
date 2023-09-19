@@ -15,7 +15,7 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>((
         px-2 py-1
         text-neutral-500
         bg-white
-        border-0 rounded
+        border border-zinc-300 rounded
       `, className)}
       name={name}
       ref={ref}

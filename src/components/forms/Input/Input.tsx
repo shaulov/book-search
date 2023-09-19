@@ -10,7 +10,10 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
   return (
     <input
       className={twMerge(`
-        
+        px-2 py-1
+        text-neutral-800
+        bg-white
+        border border-zinc-300 rounded
       `, className)}
       type={type}
       disabled={disabled}
