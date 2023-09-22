@@ -7,3 +7,11 @@ type IconProps = HeroIconSVGProps & {
 	titleId?: string;
 };
 export type Heroicon = React.FC<IconProps>;
+
+export type searchParameters = {
+	term?: string;
+	subject?: string;
+	maxResults?: string; 
+	orderBy?: string;
+	startIndex?: string;
+}
