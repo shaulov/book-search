@@ -96,8 +96,20 @@ export type Books = {
   totalItems: number;
 }
 
+export type TransformedBookData = {
+  title: string;
+  fullTitle: string;
+  authors: string;
+  subtitle: string;
+  description: string;
+  pageCount: string;
+  thumbnail: string;
+  smallThumbnail: string;
+  genres: Array<string>;
+}
+
 export type BooksData = {
-  books: Array<Book>;
+  books: Array<TransformedBookData>;
   totalBooks: number;
   isBooksLoading: boolean;
 }
