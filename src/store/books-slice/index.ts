@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { fetchBooksBySearchAction } from "../api-actions";
 import type { BooksData } from "../../common/state.types";
 import { NameSpace } from "../../common/const";
+import { transformBooksData } from "../../common/transform-books-data";
 
 const initialState: BooksData = {
   books: [],
@@ -19,12 +20,11 @@ export const booksSlice = createSlice({
         state.isBooksLoading = true;
       })
       .addCase(fetchBooksBySearchAction.fulfilled, (state, action) => {
-        state.books = action.payload.items;
+        state.books = action.payload.items ? transformBooksData(action.payload.items) : [];
         state.totalBooks = action.payload.totalItems;
         state.isBooksLoading = false;
       })
       .addCase(fetchBooksBySearchAction.rejected, (state) => {
-        console.log(state);
         state.isBooksLoading = false;
       });
   }
