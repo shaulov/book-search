@@ -4,7 +4,7 @@ import { twMerge } from "tailwind-merge";
 interface SelectProps
   extends SelectHTMLAttributes<HTMLSelectElement> {
     options: Array<Record<string, string>>
-    placeholder: string;
+    placeholder?: string;
   }
 
 const Select = forwardRef<HTMLSelectElement, SelectProps>((
@@ -21,7 +21,7 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>((
       ref={ref}
       {...props}
     >
-      <option defaultValue={placeholder}>{placeholder}</option>
+      {placeholder ? <option defaultValue={placeholder}>{placeholder}</option> : null}
       {options.map(option => (
         <option value={option['value']} key={option['value']}>{option['name']}</option>
       ))}
