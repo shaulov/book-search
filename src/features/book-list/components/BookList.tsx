@@ -10,7 +10,7 @@ function BookList({ data }: BookListProps): FunctionComponent {
   return (
     <ul className="grid grid-cols-4 gap-4">
       {data.map(item => (
-        <li key={item.title}>
+        <li key={item.id}>
           <Card data={item} />
         </li>
       ))}

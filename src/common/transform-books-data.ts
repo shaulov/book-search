@@ -2,8 +2,9 @@ import type { Book, TransformedBookData } from "./state.types";
 import { TitleSizeRestriction } from "./const";
 
 export function transformBookData(data: Book): TransformedBookData {
-  const { volumeInfo } = data;
+  const { volumeInfo, etag } = data;
   return {
+    id: etag,
     title: volumeInfo.title ? `${volumeInfo.title.slice(0, TitleSizeRestriction)}...` : 'No title',
     fullTitle: volumeInfo.title || 'No title',
     authors: volumeInfo.authors ? `${volumeInfo.authors?.join(', ')?.slice(0, TitleSizeRestriction)}...` : 'Unknown authors',
