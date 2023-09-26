@@ -1,5 +1,6 @@
 export enum NameSpace {
   Data = 'DATA',
+  Search = 'SEARCH',
 }
 
 export const SortingOptions = [

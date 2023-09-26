@@ -113,4 +113,5 @@ export type BooksData = {
   books: Array<TransformedBookData>;
   totalBooks: number;
   isBooksLoading: boolean;
+  isMoreBooksLoading: boolean;
 }

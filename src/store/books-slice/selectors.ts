@@ -6,4 +6,6 @@ export const getBooks = (state: RootState): Array<TransformedBookData> => state[
 
 export const getBooksLoadingStatus = (state: RootState): boolean => state[NameSpace.Data].isBooksLoading;
 
+export const getMoreBooksLoadingStatus = (state: RootState): boolean => state[NameSpace.Data].isMoreBooksLoading;
+
 export const getTotalBooks = (state: RootState): number => state[NameSpace.Data].totalBooks;

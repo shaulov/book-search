@@ -16,7 +16,25 @@ export const fetchBooksBySearchAction = createAsyncThunk<Books, searchParameters
       maxResults: search?.maxResults,
       orderBy: search?.orderBy,
       startIndex: search?.startIndex,
-      key: process.env['GOOGLE_API_KEY'],
+      key: process.env.GOOGLE_API_KEY || '',
+    }});
+    return data;
+  }
+);
+
+export const fetchMoreBooksByLoadMore = createAsyncThunk<Books, searchParameters | undefined, {
+  dispatch: AppDispatch,
+  state: RootState,
+  extra: AxiosInstance,
+}>(
+  'data/fetchMoreBooksByLoadMore',
+  async (search, { extra: api }) => {
+    const { data } = await api.get<Books>('/volumes', {params: {
+      q: `${search?.term}+subject:${search?.subject}`,
+      maxResults: search?.maxResults,
+      orderBy: search?.orderBy,
+      startIndex: search?.startIndex,
+      key: process.env.GOOGLE_API_KEY || '',
     }});
     return data;
   }
