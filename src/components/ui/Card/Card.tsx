@@ -9,7 +9,7 @@ function Card({ data }: CardProps): FunctionComponent {
   const { title, authors, smallThumbnail, genres } = data;
 
   return (
-    <article className="relative grid grid-cols-1 gap-1 p-4 bg-blue-100 rounded">
+    <article className="relative grid grid-cols-1 gap-1 h-full p-4 bg-blue-100 rounded">
       <h3 className="text-neutral-900 font-bold">
         <a 
           className="

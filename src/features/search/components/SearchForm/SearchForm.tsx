@@ -2,6 +2,7 @@ import { useState, type FormEvent, type ChangeEvent } from "react";
 import { twMerge } from "tailwind-merge";
 import { useAppDispatch } from "../../../../hooks/use-app-dispatch";
 import { fetchBooksBySearchAction } from "../../../../store/api-actions";
+import { setSearch } from "../../../../store/search-slice";
 import type { FunctionComponent, searchParameters } from "../../../../common/types";
 import { Input } from "../../../../components/forms/Input";
 import { Select } from "../../../../components/ui/Select";
@@ -40,6 +41,7 @@ function SearchForm({ className }: SearchFormProps): FunctionComponent {
       ...parameters,
       maxResults: String(MaxResult),
     }
+    dispatch(setSearch(parameters_));
     void dispatch(fetchBooksBySearchAction(parameters_));
   }
 
