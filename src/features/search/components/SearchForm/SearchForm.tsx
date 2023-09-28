@@ -18,7 +18,7 @@ type FormChangeEvent = ChangeEvent<HTMLInputElement | HTMLSelectElement>;
 function SearchForm({ className }: SearchFormProps): FunctionComponent {
   const [parameters, setParameters] = useState<searchParameters>({
     term: '',
-    subject: 'all',
+    subject: '',
     orderBy: 'relevance',
     startIndex: '0',
   });
