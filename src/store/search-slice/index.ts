@@ -4,9 +4,9 @@ import { NameSpace, MaxResult, SortingOptions, FilterOptions } from "../../commo
 
 const initialState: searchParameters = {
   term: '',
-  subject: SortingOptions[0]?.value,
+  subject: FilterOptions[0]?.value,
   maxResults: String(MaxResult),
-  orderBy: FilterOptions[0]?.value,
+  orderBy: SortingOptions[0]?.value,
   startIndex: '0',
 }
 

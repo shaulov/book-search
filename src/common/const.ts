@@ -4,18 +4,18 @@ export enum NameSpace {
 }
 
 export const SortingOptions = [
-  {value: 'relevance', name: 'relevance'},
-  {value: 'newest', name: 'newest'},
+  {value: 'Relevance', name: 'Relevance'},
+  {value: 'Newest', name: 'Newest'},
 ];
 
 export const FilterOptions = [
-  {value: 'all', name: 'all'},
-  {value: 'art', name: 'art'},
-  {value: 'biography', name: 'biography'},
-  {value: 'computers', name: 'computers'},
-  {value: 'history', name: 'history'},
-  {value: 'medical', name: 'medical'},
-  {value: 'poetry', name: 'poetry'},
+  {value: '', name: 'All'},
+  {value: 'Art', name: 'Art'},
+  {value: 'Biography', name: 'Biography'},
+  {value: 'Computers', name: 'Computers'},
+  {value: 'History', name: 'History'},
+  {value: 'Medical', name: 'Medical'},
+  {value: 'Poetry', name: 'Poetry'},
 ];
 
 export const MaxResult = 30;
