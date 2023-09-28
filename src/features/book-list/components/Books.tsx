@@ -27,18 +27,18 @@ function Books(): FunctionComponent {
   }
 
   return (
-    <section className="max-w-[1200px] m-auto px-10 py-4">
+    <section className="max-w-[1200px] m-auto px-10 pt-4 pb-12">
       <p className="pb-4 text-center">Found {total} results</p>
       {isLoading && <Loader />}
       <BookList data={books} />
       {
         (books.length > 0) && (total - books.length > 0) && 
         <button 
-          className="block mt-4 mx-auto px-4 py-2 text-white bg-gradient-to-r from-sky-900 to-indigo-900 rounded"
+          className="block w-[200px] mt-4 mx-auto px-4 py-2 text-white bg-gradient-to-r from-sky-900 to-indigo-900 rounded disabled:opacity-80"
           onClick={handleLoadMoreClick}
           disabled={isLoadingMore}
         >
-          Load more
+          {isLoadingMore ? 'Loading...' : 'Load more'}
         </button>
       }
     </section>
