@@ -11,8 +11,8 @@ export function transformBookData(data: Book): TransformedBookData {
     subtitle: volumeInfo?.subtitle || 'No subtitle',
     description: volumeInfo?.description || 'No description',
     pageCount: volumeInfo?.pageCount ? String(volumeInfo.pageCount) : 'N/A',
-    thumbnail: volumeInfo?.imageLinks?.thumbnail || 'public/vite-react-boilerplate.png',
-    smallThumbnail: volumeInfo?.imageLinks?.smallThumbnail || 'public/vite-react-boilerplate.png',
+    thumbnail: volumeInfo?.imageLinks?.thumbnail || 'vite-react-boilerplate.png',
+    smallThumbnail: volumeInfo?.imageLinks?.smallThumbnail || 'vite-react-boilerplate.png',
     genres: volumeInfo?.categories || [],
   };
 }
