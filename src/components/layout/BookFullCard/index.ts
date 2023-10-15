@@ -1,0 +1,1 @@
+export { BookFullCard } from './BookFullCard';
