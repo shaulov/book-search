@@ -1,6 +1,5 @@
 import { Route } from "@tanstack/router";
 import { rootRoute } from "./RootRoute";
-import { bookRoute } from "./BookRoute";
 import Home from "../pages/Home";
 
 export const IndexRoute = new Route({
@@ -8,5 +7,3 @@ export const IndexRoute = new Route({
 	path: "/",
 	component: Home,
 });
-
-IndexRoute.addChildren([bookRoute]);

@@ -1,8 +1,9 @@
 import { Router } from "@tanstack/router";
 import { IndexRoute } from "./IndexRoute";
+import { bookRoute } from "./BookRoute";
 import { rootRoute } from "./RootRoute";
 
-const routeTree = rootRoute.addChildren([IndexRoute]);
+const routeTree = rootRoute.addChildren([IndexRoute, bookRoute]);
 
 const router = new Router({ routeTree });
 
