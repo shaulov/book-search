@@ -101,6 +101,7 @@ export type TransformedBookData = {
   title: string;
   fullTitle: string;
   authors: string;
+  fullAuthors: string;
   subtitle: string;
   description: string;
   pageCount: string;

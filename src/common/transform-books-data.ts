@@ -8,6 +8,7 @@ export function transformBookData(data: Book): TransformedBookData {
     title: volumeInfo?.title ? `${volumeInfo.title.slice(0, TitleSizeRestriction)}...` : 'No title',
     fullTitle: volumeInfo?.title || 'No title',
     authors: volumeInfo?.authors ? `${volumeInfo.authors?.join(', ')?.slice(0, TitleSizeRestriction)}...` : 'Unknown authors',
+    fullAuthors: volumeInfo?.authors ? volumeInfo?.authors.join(', ') : 'Unknown authors',
     subtitle: volumeInfo?.subtitle || 'No subtitle',
     description: volumeInfo?.description || 'No description',
     pageCount: volumeInfo?.pageCount ? String(volumeInfo.pageCount) : 'N/A',
