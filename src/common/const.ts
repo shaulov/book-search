@@ -19,5 +19,3 @@ export const FilterOptions = [
 ];
 
 export const MaxResult = 30;
-
-export const TitleSizeRestriction = 22;

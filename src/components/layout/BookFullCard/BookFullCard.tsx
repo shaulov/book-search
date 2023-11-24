@@ -13,9 +13,9 @@ function BookFullCard(): FunctionComponent {
       <Link className="justify-self-start p-1 underline" to="/" activeOptions={{ exact: true }}>
         &#8592; Go back
       </Link>
-      <h1 className="col-span-2 mb-2 text-3xl">{currentBook?.fullTitle}</h1>
+      <h1 className="col-span-2 align mb-2 text-3xl">{currentBook?.title}</h1>
       <div className="col-span-2 md:col-span-1 flex justify-center items-center p-2 bg-sky-50 rounded">
-        <img className="w-auto h-5/6 shadow-2xl" src={currentBook?.thumbnail} width={300} height={400} alt="Book cover" />
+        <img className="self-start w-full h-auto shadow-2xl" src={currentBook?.thumbnail} width={300} height={400} alt="Book cover" />
       </div>
       <dl className="col-span-2 md:col-span-1 flex flex-col justify-start gap-2 p-2 bg-sky-50 rounded">
         <dt className="font-bold">Subtitle:</dt>

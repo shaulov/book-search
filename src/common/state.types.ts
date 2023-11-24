@@ -99,7 +99,6 @@ export type Books = {
 export type TransformedBookData = {
   id: string;
   title: string;
-  fullTitle: string;
   authors: string;
   subtitle: string;
   description: string;

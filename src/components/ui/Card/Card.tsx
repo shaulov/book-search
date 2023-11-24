@@ -7,11 +7,11 @@ type CardProps = {
 }
 
 function Card({ data }: CardProps): FunctionComponent {
-  const { id, fullTitle, authors, smallThumbnail, genres } = data;
+  const { id, title, authors, smallThumbnail, genres } = data;
 
   return (
     <article className="relative grid grid-cols-1 gap-1 h-full p-4 bg-blue-100 rounded">
-      <h3 className="text-neutral-900 font-bold">
+      <h3 className="self-end text-neutral-900 font-bold">
         <Link 
           className="
             line-clamp-1
@@ -21,11 +21,11 @@ function Card({ data }: CardProps): FunctionComponent {
           to="/$bookId"
           params={{ bookId: id }}
         >
-          {fullTitle}
+          {title}
         </Link>
       </h3>
-      <p className="text-neutral-400 line-clamp-1">{authors}</p>
-      <ul className="row-start-2 flex gap-1 mb-1">
+      <p className="self-end text-neutral-400 line-clamp-1">{authors}</p>
+      <ul className="row-start-2 self-end flex gap-1 mb-1">
         {genres.map(genre => (
           <li className="text-neutral-400 underline" key={genre}>{genre}</li>
         ))}
