@@ -1,4 +1,5 @@
-import { useState, type FormEvent, type ChangeEvent } from "react";
+import type { FormEvent, ChangeEvent } from "react";
+import { useSearch, useNavigate } from "@tanstack/router";
 import { twMerge } from "tailwind-merge";
 import { useAppDispatch } from "../../../../hooks/use-app-dispatch";
 import { fetchBooksBySearchAction } from "../../../../store/api-actions";
@@ -16,29 +17,25 @@ type FormSubmitEvent = FormEvent<HTMLFormElement>;
 type FormChangeEvent = ChangeEvent<HTMLInputElement | HTMLSelectElement>;
 
 function SearchForm({ className }: SearchFormProps): FunctionComponent {
-  const [parameters, setParameters] = useState<searchParameters>({
-    term: '',
-    subject: '',
-    orderBy: 'relevance',
-    startIndex: '0',
-  });
+  const searchParameters: searchParameters = useSearch();
+  const navigate = useNavigate();
+
   const dispatch = useAppDispatch();
 
   const handleChange = (event_: FormChangeEvent): void => {
     const name = event_.target.name;
     const value = event_.target.value;
 
-    setParameters({
-      ...parameters,
-      [name]: value,
+    void navigate({
+      search: () => ({ ...searchParameters, [name]: value })
     });
   }
 
   const handleSubmit = (event_: FormSubmitEvent): void => {
     event_.preventDefault();
-    
+
     const parameters_ = {
-      ...parameters,
+      ...searchParameters,
       maxResults: String(MaxResult),
     }
     dispatch(setSearch(parameters_));
@@ -58,7 +55,7 @@ function SearchForm({ className }: SearchFormProps): FunctionComponent {
           type="search" 
           name="term"
           placeholder="Type book name" 
-          value={parameters.term}
+          value={searchParameters.term}
           onChange={handleChange}
           required
         />
@@ -69,7 +66,7 @@ function SearchForm({ className }: SearchFormProps): FunctionComponent {
           className="grow w-full xl:w-auto"
           options={FilterOptions}
           name="subject"
-          value={parameters.subject}
+          value={searchParameters.subject}
           onChange={handleChange}
         />
       </label>
@@ -79,7 +76,7 @@ function SearchForm({ className }: SearchFormProps): FunctionComponent {
           className="grow w-full xl:w-auto"
           options={SortingOptions}
           name="orderBy"
-          value={parameters.orderBy}
+          value={searchParameters.orderBy}
           onChange={handleChange}
         />
       </label>
